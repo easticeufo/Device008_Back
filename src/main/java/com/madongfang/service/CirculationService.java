@@ -152,9 +152,12 @@ public class CirculationService {
 				cell.setCellValue(measure.getManufacturer());
 				cell = row.getCell(10);
 				cell.setCellValue(measure.getConclusion());
-				cell = row.getCell(11);
-				sdf.applyPattern("yyyy-MM-dd");
-				cell.setCellValue(sdf.format(measure.getTime()));
+				if (measure.getTime() != null)
+				{
+					cell = row.getCell(11);
+					sdf.applyPattern("yyyy-MM-dd");
+					cell.setCellValue(sdf.format(measure.getTime()));
+				}
 				cell = row.getCell(12);
 				if (cell == null)
 				{
@@ -232,27 +235,33 @@ public class CirculationService {
 				row = sheet.getRow(8);
 				cell = row.getCell(5);
 				cell.setCellValue(measure.getAccuracy());
-				cell = row.getCell(17);
-				sdf.applyPattern("yyyy");
-				cell.setCellValue(sdf.format(measure.getTime()));
-				cell = row.getCell(23);
-				sdf.applyPattern("MM");
-				cell.setCellValue(sdf.format(measure.getTime()));
-				cell = row.getCell(26);
-				sdf.applyPattern("dd");
-				cell.setCellValue(sdf.format(measure.getTime()));
+				if (measure.getTime() != null)
+				{
+					cell = row.getCell(17);
+					sdf.applyPattern("yyyy");
+					cell.setCellValue(sdf.format(measure.getTime()));
+					cell = row.getCell(23);
+					sdf.applyPattern("MM");
+					cell.setCellValue(sdf.format(measure.getTime()));
+					cell = row.getCell(26);
+					sdf.applyPattern("dd");
+					cell.setCellValue(sdf.format(measure.getTime()));
+				}
 				row = sheet.getRow(9);
 				cell = row.getCell(5);
 				cell.setCellValue(measure.getSampleNumber());
-				cell = row.getCell(17);
-				sdf.applyPattern("yyyy");
-				cell.setCellValue(sdf.format(measure.getExpiryTime()));
-				cell = row.getCell(23);
-				sdf.applyPattern("MM");
-				cell.setCellValue(sdf.format(measure.getExpiryTime()));
-				cell = row.getCell(26);
-				sdf.applyPattern("dd");
-				cell.setCellValue(sdf.format(measure.getExpiryTime()));
+				if (measure.getExpiryTime() != null)
+				{
+					cell = row.getCell(17);
+					sdf.applyPattern("yyyy");
+					cell.setCellValue(sdf.format(measure.getExpiryTime()));
+					cell = row.getCell(23);
+					sdf.applyPattern("MM");
+					cell.setCellValue(sdf.format(measure.getExpiryTime()));
+					cell = row.getCell(26);
+					sdf.applyPattern("dd");
+					cell.setCellValue(sdf.format(measure.getExpiryTime()));
+				}
 				row = sheet.getRow(10);
 				cell = row.getCell(5);
 				cell.setCellValue(measure.getManufacturer());

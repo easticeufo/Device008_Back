@@ -275,14 +275,8 @@ public class MeasureService {
 		{
 			measure.setDirection(measureApi.getDirection());
 		}
-		if (measureApi.getTime() != null)
-		{
-			measure.setTime(measureApi.getTime());
-		}
-		if (measureApi.getExpiryTime() != null)
-		{
-			measure.setExpiryTime(measureApi.getExpiryTime());
-		}
+		measure.setTime(measureApi.getTime());
+		measure.setExpiryTime(measureApi.getExpiryTime());
 		if (measureApi.getInteriorSign() != null)
 		{
 			measure.setInteriorSign(measureApi.getInteriorSign());
